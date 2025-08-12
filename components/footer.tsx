@@ -1,15 +1,19 @@
 "use client"
 
-import { Github, Star, Heart } from "lucide-react"
+import { Github, Star, Heart, Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Footer() {
   const handleGitHubClick = () => {
-    window.open("https://github.com/danishkhan", "_blank")
+    window.open("https://github.com/Danishmk1286", "_blank")
   }
 
-  const handleStarClick = () => {
-    window.open("https://github.com/danishkhan?tab=repositories", "_blank")
+  const handleRepoClick = () => {
+    window.open("https://github.com/Danishmk1286/WCAG-Color-Contrast-Checker", "_blank")
+  }
+
+  const handleLinkedInClick = () => {
+    window.open("https://www.linkedin.com/in/danishmk1286/", "_blank")
   }
 
   return (
@@ -23,7 +27,15 @@ export function Footer() {
               A professional tool for checking color contrast compliance with WCAG accessibility standards.
             </p>
             <p className="text-xs text-gray-500 dark:text-gray-400">
-              Created with <Heart className="inline w-3 h-3 text-red-500" /> by Danish Khan
+              Created with <Heart className="inline w-3 h-3 text-red-500" /> by{" "}
+              <a
+                href="https://www.linkedin.com/in/danishmk1286/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Danish Khan
+              </a>
             </p>
           </div>
 
@@ -52,18 +64,18 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Feedback & Support */}
+          {/* Support & Social Links */}
           <div>
-            <h4 className="font-semibold mb-3 text-gray-900 dark:text-gray-100">Support & Feedback</h4>
+            <h4 className="font-semibold mb-3 text-gray-900 dark:text-gray-100">Connect & Support</h4>
             <div className="space-y-3">
               <Button
-                onClick={handleStarClick}
+                onClick={handleRepoClick}
                 variant="outline"
                 size="sm"
                 className="w-full justify-start bg-transparent dark:border-gray-600"
               >
                 <Star className="mr-2 h-4 w-4" />
-                Star on GitHub
+                Star this Project
               </Button>
               <Button
                 onClick={handleGitHubClick}
@@ -72,7 +84,16 @@ export function Footer() {
                 className="w-full justify-start bg-transparent dark:border-gray-600"
               >
                 <Github className="mr-2 h-4 w-4" />
-                View Profile
+                GitHub Profile
+              </Button>
+              <Button
+                onClick={handleLinkedInClick}
+                variant="outline"
+                size="sm"
+                className="w-full justify-start bg-transparent dark:border-gray-600"
+              >
+                <Linkedin className="mr-2 h-4 w-4" />
+                LinkedIn Profile
               </Button>
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">More accessibility tools coming soon!</p>
             </div>
